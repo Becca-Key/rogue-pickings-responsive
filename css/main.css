@@ -29,6 +29,7 @@ h3 {
 }
 h1 {
 	font-size: 1.875em;
+	flex-basis: 100%;
 }
 h2 {
 	font-size: 1.125em;
@@ -45,17 +46,18 @@ p {
 
 /*The widths are in a percentage!*/
 header {
-	border-bottom: 3px solid #77a466;
 	margin: 0 auto;
 	display: flex;
+	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
+	flex-basis: 100%;
 }
 
 header h1 {
 	margin: 0;
 	padding: 38px 0;
+	border-bottom: #77a466 solid 3px;
 }
 header h1 span {
 	color: #77a466;
@@ -64,17 +66,22 @@ header h1 span {
 header nav {
 	padding: 46px 0;
 }
+
 header nav ul {
 	margin: 0;
 	padding: 0;
 }
+
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 0.875em;
-	padding: 0 10px;
-	display: inline;
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
 }
+
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
@@ -87,10 +94,11 @@ header nav ul li a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 }
 
 .main-image {
+	height: auto;
 }
 
 .main-image img {
@@ -99,6 +107,7 @@ header nav ul li a{
 }
 
 .main-title {
+	height: auto;
 
 }
 .main-title h2 {
@@ -115,17 +124,27 @@ header nav ul li a{
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
+	/*width: 33%;*/
+	/*height: auto;*/
+	flex-flow: column wrap;
 	border-top: 1px solid #eee;
+	flex-grow: 2;
 }
 
 .section-one h3 {
 	padding: 10px 0;
 }
 
+.section-three p{
+	font-size: 0.85em;
+}
+.section-three {
+	justify-content: flex-end;
+}
+
 .section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 
 .section-two h3,
@@ -161,7 +180,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
+	flex-basis: 100%;
 }
 
 footer span {
@@ -171,56 +190,25 @@ footer span {
 	font-size: 0.875em;
 }
 
-/*****TABLET*****/
-body {
-
-}
-
-.container {
-
-
-}
-
-header {
-
-}
-
-.top-section {
-
-}
-
+@media all and (min-width:768px) {
+    /* Tablet styles here */
 .bottom-section {
-
-} 
-
-footer {
-
-}
-
-
-/*****DESKTOP*****/
-body {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: auto;
 
 }
-
-.container {
-
-
+.section-one, .section-two, .section-three {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: auto;
 }
-
-header {
-
+ 
 }
-
-.top-section {
-
+ 
+@media all and (min-width:1200px) {
+    /* Desktop styles here */
+ 
 }
-
-.bottom-section {
-
-} 
-
-footer {
-
-}
-
